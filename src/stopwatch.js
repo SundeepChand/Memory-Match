@@ -16,16 +16,17 @@ class currentTime {
     }
 
     displayTime() {
-        let minutesText, secondsText
+        let minutesText = this.seconds.toString()
+        let secondsText = this.seconds.toString()
         if (this.seconds < 10)
         {
-            this.secondsText = '0' + this.seconds.toString()
+            secondsText = '0' + this.seconds.toString()
         }
         if (this.minutes < 10)
         {
-            this.minutesText = '0' + this.minutes.toString()
+            minutesText = '0' + this.minutes.toString()
         }
-        this.stopwatchElement.textContent = `${this.minutesText}:${this.secondsText}`
+        this.stopwatchElement.textContent = `${minutesText}:${secondsText}`
     }
 }
 
