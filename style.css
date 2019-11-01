@@ -46,6 +46,7 @@ header {
 .game-board > .card:hover {
     transform: scale(1.01);
     box-shadow: 2px 2px 20px 3px gray;
+    cursor: pointer;
 }
 
 footer {
