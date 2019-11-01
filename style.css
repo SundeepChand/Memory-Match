@@ -1,0 +1,36 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+header {
+    width: inherit;
+    max-height: 80px;
+    height: 20vh;
+    background-color: #9900FF;
+    padding-top: 20px;
+}
+
+.content {
+    height: 80vh;
+    width: inherit;
+    background-color: #F9D4EB;
+    padding-top: 50px;
+}
+
+.game-board {
+    width: 95vw;
+    height: 400px;
+    background-color: #71F4C2;
+    margin-left: 2.5vw;
+}
+
+footer {
+    width: inherit;
+    max-height: 80px;
+    height: 10vh;
+    background-color: #9900FF;
+    padding-top: 15px;
+}
