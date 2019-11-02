@@ -54,7 +54,18 @@ header {
 
 .game-board > .card:hover {
     transform: scale(1.01);
+    border: 3px solid gold;
     cursor: pointer;
+}
+
+.game-board > .disabled {
+    opacity: 0.3;
+}
+
+.game-board > .disabled:hover{
+    transform: scale(1.0);
+    border: none;
+    cursor: not-allowed;
 }
 
 .selected {

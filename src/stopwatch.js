@@ -29,4 +29,3 @@ class currentTime {
         this.stopwatchElement.textContent = `${minutesText}:${secondsText}`
     }
 }
-
