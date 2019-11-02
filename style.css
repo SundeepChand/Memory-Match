@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 *{
     margin: 0px;
     padding: 0px;
@@ -5,11 +7,16 @@
     text-align: center;
 }
 
-header {
+header, footer {
     width: inherit;
     max-height: 80px;
-    height: 20vh;
     background-color: #9900FF;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    height: 20vh;
     padding-top: 20px;
 }
 
@@ -46,15 +53,24 @@ header {
 }
 
 .game-board > .card:hover {
+    /* transform: scale(1.01);
+    box-shadow: 2px 2px 20px 3px gray; */
+    cursor: pointer;
+    border: 3px solid yellow;
+}
+
+.selected {
     transform: scale(1.01);
     box-shadow: 2px 2px 20px 3px gray;
-    cursor: pointer;
 }
 
 footer {
-    width: inherit;
-    max-height: 80px;
     height: 10vh;
-    background-color: #9900FF;
     padding-top: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+    .game-board > .card:hover {
+        border: none;
+    }
 }
