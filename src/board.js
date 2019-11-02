@@ -1,17 +1,34 @@
 class Board {
     constructor() {
+        // Cards store the actual card element.
         this.cards = document.getElementsByClassName('card');
 
-        this.emojis = ['🐸' , '🐰', '🐯', '🐶' , '🐷' , '🐱']
-        // console.log(this.cards)
+        // Backing grid will store the values in background.
+        this.backingGrid = new Array(36)
 
-        // Fill the grid with the emojis.
+        // Emojis are game charachters
+        this.emojis = ['🐸' , '🐰', '🐯', '🐶' , '🐷' , '🐱']
+
+        // Moves stores the no of clicks the player has made.
+        this.moves = 0
+
+        this.initBoard()        
+    }
+
+    initBoard() {
+        // Add background to the cards.
+        for (let i = 0; i < this.cards.length; i++)
+        {
+            this.cards[i].textContent = '🍀'
+        }
+
+        // Fill the backing-grid with the emojis.
         this.emojis.forEach((item) => {
             for (let i = 0; i < 6; i++)
             {
                 const index = Math.floor(Math.random() * this.cards.length)
-                if (this.cards[index].textContent === '') {
-                    this.cards[index].textContent = item
+                if (this.backingGrid[index] === undefined) {
+                    this.backingGrid[index] = item
                 }
                 else {
                     i--
@@ -28,14 +45,24 @@ class Board {
         }
     }
 
+    updateMoves() {
+        this.moves++
+        document.getElementById('moves-text').textContent = this.moves.toString()
+    }
+
     onCardsTouched(cardNum) {
         // Selected keeps track of the cards selected.
         let selected = cardNum
+
+        // Update the moves
+        this.updateMoves()
         
         if (this.cards[selected].classList.value === `card card${selected + 1}`) {
             this.cards[selected].classList.value = `card card${selected + 1} selected`
+            this.cards[selected].textContent = this.backingGrid[selected]
         } else {
             this.cards[selected].classList.value = `card card${selected + 1}`
+            this.cards[selected].textContent = '🍀' 
         } 
     }
 }
