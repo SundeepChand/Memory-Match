@@ -1,0 +1,33 @@
+.game-menu {
+    width: 100vw;
+    height: calc(100vh - 80px);
+    overflow-y: hidden;
+    background-color: rgba(85, 47, 86, 0.788);
+    position: fixed;
+    top: 80px;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.5s ease-in-out;
+}
+
+.game-menu > div {
+    font-size: 30px;
+    color: white;
+    font-weight: 500;
+    padding: 40px 10px;
+}
+
+#btn-start {
+    width: 120px;
+    height: 40px;
+    font-size: 25px;
+    border-radius: 5px;
+    outline: none;
+    border: 0px;
+    background-color: #9900FF;
+    color: white;
+}
+
+#btn-start:hover {
+    transform: scale(1.04);
+    cursor: pointer;
+}
