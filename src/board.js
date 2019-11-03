@@ -17,6 +17,8 @@ class Board {
         this.selectedCard1 = -1
         this.selectedCard2 = -1 
 
+        this.gameOver = false  // Stores if the game is over.
+
         // Instantiate the class & start the timer.
         const stopwatch = new currentTime()
         this.stopWatchInterval = window.setInterval(() => {
@@ -90,6 +92,11 @@ class Board {
         this.cards[card2].classList.add('disabled')
     }
 
+    isGameOver() {
+        // Returns if the game is over.
+        return this.gameOver
+    }
+
     areCardsEqual(card1, card2) {
         // Checks if the selected cards are equal or not.
         // card1 & card2 hold the indices of the two chosen cards.
@@ -101,9 +108,7 @@ class Board {
 
                 // Check if the game ends.
                 if (this.checkGameEnd() === true) {
-                    console.log('Game over')
-                    clearInterval(this.stopWatchInterval)
-                    this.stopWatchInterval = 0
+                    this.handleGameOver()
                 }
             }, 0)
 
@@ -117,6 +122,13 @@ class Board {
                 this.keepCard(card2)
             }, 500)
         }
+    }
+
+    handleGameOver() {
+        console.log('Game over')
+        this.gameOver = true
+        clearInterval(this.stopWatchInterval)
+        this.stopWatchInterval = 0
     }
 
     checkGameEnd() {
