@@ -9,4 +9,4 @@ A web-based memory game where the player selects cards having same pictures in a
 
 ## Screenshot
 
-![Scrrenshot of the game-screen](img/screenshot.png)
+![Scrrenshot of the game-screen](img/screenshot.PNG)
