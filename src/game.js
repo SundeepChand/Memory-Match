@@ -4,6 +4,8 @@ class Game {
     }
 
     initGame() {
+        // Initialize the game.
+
         this.gameMenu = document.getElementById('game-menu')    // Select the game menu.
         this.btnStart = document.getElementById('btn-start')    // Select the start button.
 
@@ -13,15 +15,15 @@ class Game {
     }
 
     hideGameMenu() {
-        // Close the game board.
+        // Close the game menu.
         this.gameMenu.style.opacity = '0'
         setTimeout(() => {
             this.gameMenu.style.visibility = 'hidden'
-        }, 500)
+        }, 300)
     }
 
     startNewGame() {
-        // Start game.
+        // Start the game.
         this.hideGameMenu()
         
         // Start the game.
@@ -29,15 +31,21 @@ class Game {
 
         // Call handleGameOver every 500ms.
         this.gameOverInterval = window.setInterval(() => {
-            this.handleGameOver()
+            this.checkGameOver()
         }, 500)
     }
 
-    handleGameOver() {
-        // Checks if the ame is over.
+    checkGameOver() {
+        // Checks if the game is over.
         if (this.gameBoard.isGameOver()) {
-            window.clearInterval(this.gameOverInterval)
-            // alert('Game is over now')
+            this.handleGameOver()
         }
+    }
+
+    handleGameOver() {
+        // Called when the game is over.
+        window.clearInterval(this.gameOverInterval)
+        console.log('Game over')
+        // alert('Game is over now')
     }
 }

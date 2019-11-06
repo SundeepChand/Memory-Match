@@ -82,6 +82,7 @@ class Board {
     }
 
     disableCards(card1, card2) {
+        // disables the cards card1 & card2.
         this.backingGrid[card1] = '0'
         this.backingGrid[card2] = '0'
 
@@ -125,13 +126,14 @@ class Board {
     }
 
     handleGameOver() {
-        console.log('Game over')
+        // called when game is over
         this.gameOver = true
         clearInterval(this.stopWatchInterval)
         this.stopWatchInterval = 0
     }
 
     checkGameEnd() {
+        // Checks if the game is over.
         // If all the elements in this.cards have class == 'card cardi disabled' then the game is over.
         for (let i = 0; i < this.cards.length; i++) {
             if (!this.cards[i].classList.contains('disabled')) {
@@ -142,6 +144,7 @@ class Board {
     }
 
     onCardsTouched(cardNum) {
+        // called when a card is touched.
         // cardNum gives the index of the card clicked.
 
         // Set the selected cards.

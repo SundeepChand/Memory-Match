@@ -1,12 +1,14 @@
 class currentTime {
 
     constructor() {
+        // default constructor.
         this.minutes = 0
         this.seconds = 0
         this.stopwatchElement = document.getElementById('stopwatch')
     }
 
     increment() {
+        // increments the time.
         this.seconds++
         if (this.seconds > 59)
         {
@@ -16,6 +18,7 @@ class currentTime {
     }
 
     displayTime() {
+        // renders the time on the stopWatchElement
         let minutesText = this.minutes.toString()
         let secondsText = this.seconds.toString()
         // if (this.seconds < 10)
