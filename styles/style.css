@@ -9,7 +9,6 @@
 
 header, footer {
     width: inherit;
-    max-height: 80px;
     background-color: #9900FF;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -17,11 +16,13 @@ header, footer {
 
 header {
     height: 20vh;
+    max-height: 80px;
     padding-top: 20px;
 }
 
 .content {
-    height: 80vh;
+    height: auto;
+    padding-bottom: 90px;
     width: inherit;
     background-color: #F9D4EB;
     padding-top: 50px;
@@ -74,8 +75,9 @@ header {
 }
 
 footer {
-    height: 10vh;
+    height: auto;
     padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .link {

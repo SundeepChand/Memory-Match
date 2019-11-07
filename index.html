@@ -15,17 +15,6 @@
             <h1>Memory Match</h1>
         </header>
 
-        <!--Add the game menu-->
-        <div id="game-menu" class="game-menu">
-            <div class="description">
-                <p>
-                    Tap on the cards & select same cards in a row to score the maximum points
-                </p>
-            </div>
-            <div id="scores"></div>
-            <button id="btn-start">Play</button>
-        </div>
-
         <div class="info">
             <div class="timer">
                 Time: <p id="stopwatch">00:00</p>
@@ -36,6 +25,21 @@
         </div>
 
         <div class="content">
+            <!--Add the game menu-->
+            <div id="game-menu" class="game-menu">
+                <div class="description">
+                    <p>
+                        Tap on the cards & select same cards in a row to score the maximum points
+                    </p>
+                </div>
+                <div class="scores">
+                    <p id="score">Score: 0</p>
+                    <p id="highscore">Highscore: 0</p>
+                </div>
+                <button id="btn-start">Play</button>
+            </div>
+
+            <!-- Game Board -->
             <div class="game-board">
                 <div class="card card1"></div>
                 <div class="card card2"></div>

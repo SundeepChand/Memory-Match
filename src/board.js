@@ -20,10 +20,10 @@ class Board {
         this.gameOver = false  // Stores if the game is over.
 
         // Instantiate the class & start the timer.
-        const stopwatch = new currentTime()
+        this.stopwatch = new currentTime()
         this.stopWatchInterval = window.setInterval(() => {
-            stopwatch.increment()
-            stopwatch.displayTime()
+            this.stopwatch.increment()
+            this.stopwatch.displayTime()
         }, 1000)
 
         // Function to initialize the board.
@@ -125,9 +125,19 @@ class Board {
         }
     }
 
+    resetCards() {
+        // Remove contents from the cards.
+        for (let i = 0; i < this.cards.length; i++)
+        {
+            this.cards[i].textContent = ''
+            this.cards[i].classList.remove('disabled')
+        }
+    }
+
     handleGameOver() {
         // called when game is over
         this.gameOver = true
+        this.resetCards()
         clearInterval(this.stopWatchInterval)
         this.stopWatchInterval = 0
     }
