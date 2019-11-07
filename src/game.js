@@ -95,9 +95,9 @@ class Game {
         // Called when the game is over.
         window.clearInterval(this.gameOverInterval)
         console.log('Game over')
-        this.updateHighScore()
         this.renderPlayerScore()
         this.renderHighScore()
+        this.updateHighScore()
         this.showGameMenu()
     }
 }
