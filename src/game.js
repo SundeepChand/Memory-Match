@@ -34,6 +34,7 @@ class Game {
         this.renderHighScore()    // Update the score.
 
         this.btnStart.addEventListener('click', () => {
+            navigator.vibrate(50)    // Vibrate the device for 50ms (if the device supports vibration)
             this.startNewGame()
         })
     }

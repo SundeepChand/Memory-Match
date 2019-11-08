@@ -104,8 +104,6 @@ class Board {
         if (this.backingGrid[card1] === this.backingGrid[card2]) {
             // If the two cards are equal.
             setTimeout(() => {
-                navigator.vibrate(200)    // Vibrate the device for 200ms (if the device supports vibration)
-
                 this.disableCards(card1, card2)    // Disable the cards & reset the backingGrid.
 
                 // Check if the game ends.
@@ -169,6 +167,7 @@ class Board {
     onCardsTouched(cardNum) {
         // called when a card is touched.
         // cardNum gives the index of the card clicked.
+        navigator.vibrate(50)    // Vibrate the device for 50ms (if the device supports vibration)
 
         // Set the selected cards.
         if (this.selectedCard1 == -1) {
