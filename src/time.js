@@ -1,4 +1,4 @@
-class currentTime {
+class Time {
 
     constructor() {
         // default constructor.
@@ -15,6 +15,11 @@ class currentTime {
             this.seconds = 0
             this.minutes++
         }
+    }
+
+    resetTime() {
+        // reset the time text to 00:00
+        this.stopwatchElement.textContent = '00:00'
     }
 
     displayTime() {

@@ -20,7 +20,7 @@ class Board {
         this.gameOver = false  // Stores if the game is over.
 
         // Instantiate the class & start the timer.
-        this.stopwatch = new currentTime()
+        this.stopwatch = new Time()
         this.stopWatchInterval = window.setInterval(() => {
             this.stopwatch.increment()
             this.stopwatch.displayTime()
@@ -104,6 +104,7 @@ class Board {
         if (this.backingGrid[card1] === this.backingGrid[card2]) {
             // If the two cards are equal.
             setTimeout(() => {
+                navigator.vibrate(200)    // Vibrate the device for 200ms (if the device supports vibration)
 
                 this.disableCards(card1, card2)    // Disable the cards & reset the backingGrid.
 
@@ -134,12 +135,24 @@ class Board {
         }
     }
 
+    resetMoves() {
+        // Reset the moves to 0.
+        document.getElementById('moves-text').textContent = '0'
+    }
+
+    resetTime() {
+        // Resets the time back to 00:00
+        this.stopwatch.resetTime()
+    }
+
     handleGameOver() {
         // called when game is over
-        this.gameOver = true
-        this.resetCards()
         clearInterval(this.stopWatchInterval)
         this.stopWatchInterval = 0
+        this.resetCards()     // Reset the cards
+        this.resetMoves()     // Reset the moves
+        this.resetTime()      // Reset the time
+        this.gameOver = true
     }
 
     checkGameEnd() {
